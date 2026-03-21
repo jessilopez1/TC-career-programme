@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Kind of Work Suits You?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ee;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #1a1a1a;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  header p {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .step { display: none; animation: fadeIn 0.35s ease; }
+  .step.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+
+  .step-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 16px;
+  }
+
+  .question {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    line-height: 1.35;
+    margin-bottom: 32px;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .option-btn {
+    background: #f5f3ee;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 18px 24px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .option-btn:hover {
+    background: #eae7e0;
+    border-color: #c5b99a;
+    transform: translateX(4px);
+  }
+
+  .option-btn .arrow { color: #c5b99a; font-size: 1.1rem; flex-shrink: 0; }
+
+  .back-btn {
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #999;
+    cursor: pointer;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .back-btn:hover { color: #555; }
+
+  .result-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 48px 40px;
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  }
+
+  .result-tag {
+    display: inline-block;
+    background: #c5b99a;
+    color: #1a1a1a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .result-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  .result-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 24px;
+  }
+
+  .result-roles {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    border-left: 3px solid #c5b99a;
+  }
+
+  .result-roles strong {
+    color: #c5b99a;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .result-roles p {
+    font-size: 0.88rem;
+    color: #bbb;
+    line-height: 1.6;
+  }
+
+  .restart-btn {
+    margin-top: 28px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    padding: 12px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .restart-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+
+  .progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+
+  .progress-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #d4cfc6;
+    transition: all 0.3s;
+  }
+  .progress-dot.done { background: #1a1a1a; }
+  .progress-dot.active { background: #c5b99a; width: 20px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>What kind of work suits you?</h1>
+    <p>Answer a few short questions to find your natural working orientation. This isn't about what you know — it's about how you like to work.</p>
+  </header>
+
+  <div class="progress" id="progress">
+    <div class="progress-dot active" id="dot-0"></div>
+    <div class="progress-dot" id="dot-1"></div>
+    <div class="progress-dot" id="dot-2"></div>
+    <div class="progress-dot" id="dot-3"></div>
+    <div class="progress-dot" id="dot-4"></div>
+  </div>
+
+  <!-- Step 0: Tech vs Business split -->
+  <div class="step active" id="step-0">
+    <div class="question-card">
+      <div class="step-label">Question 1</div>
+      <div class="question">When you think about the work you want to do, what feels most central to you?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('step-1', 1)">
+          <span>Working directly with technology, data, or systems — building, analysing, or engineering</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('step-biz-1', 1)">
+          <span>Driving business outcomes using technology and data as tools — not building the systems, but making them work</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL BRANCH -->
+
+  <!-- Step 1: Understanding vs Building -->
+  <div class="step" id="step-1">
+    <div class="question-card">
+      <div class="step-label">Question 2</div>
+      <div class="question">When you work on something complex, what gives you the most satisfaction?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('step-2a', 2)">
+          <span>Understanding it deeply and explaining it clearly to others</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('step-2b', 2)">
+          <span>Building something concrete that solves the problem</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-0', 0)">← Back</button>
+  </div>
+
+  <!-- Step 2a: Understanding path -->
+  <div class="step" id="step-2a">
+    <div class="question-card">
+      <div class="step-label">Question 3</div>
+      <div class="question">Once you understand something, what do you most want to do with it?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('step-3a', 3)">
+          <span>Share it — present it, help others act on it and make better decisions</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-b', 3)">
+          <span>Go deeper — experiment, push the understanding further, build models</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-1', 1)">← Back</button>
+  </div>
+
+  <!-- Step 3a: Who do you work with -->
+  <div class="step" id="step-3a">
+    <div class="question-card">
+      <div class="step-label">Question 4</div>
+      <div class="question">Who do you most enjoy working with and communicating to?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('result-a', 4)">
+          <span>Business teams, stakeholders, and non-technical people who need to make decisions</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-f', 4)">
+          <span>Technical teams — I prefer building the data layer that makes insights possible</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-2a', 2)">← Back</button>
+  </div>
+
+  <!-- Step 2b: Building path -->
+  <div class="step" id="step-2b">
+    <div class="question-card">
+      <div class="step-label">Question 3</div>
+      <div class="question">What kind of thing do you enjoy building most?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('step-3b', 3)">
+          <span>Systems and infrastructure that run reliably and efficiently behind the scenes</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('step-3c', 3)">
+          <span>Products or features that people actually interact with directly</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-1', 1)">← Back</button>
+  </div>
+
+  <!-- Step 3b: Systems path -->
+  <div class="step" id="step-3b">
+    <div class="question-card">
+      <div class="step-label">Question 4</div>
+      <div class="question">What motivates you most about building systems?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('result-c', 4)">
+          <span>That they're robust, scalable, and others can confidently build on top of them</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-e', 4)">
+          <span>That they make something smarter or more capable — powering AI or intelligent features</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-2b', 2)">← Back</button>
+  </div>
+
+  <!-- Step 3c: Product path -->
+  <div class="step" id="step-3c">
+    <div class="question-card">
+      <div class="step-label">Question 4</div>
+      <div class="question">Where do you prefer to be in relation to the end user?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('result-d', 4)">
+          <span>As close as possible — I want to shape what they see, feel, and interact with</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-e', 4)">
+          <span>In the middle — connecting intelligent technology to the product they use</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-2b', 2)">← Back</button>
+  </div>
+
+  <!-- BUSINESS BRANCH -->
+
+  <!-- Biz Step 1 -->
+  <div class="step" id="step-biz-1">
+    <div class="question-card">
+      <div class="step-label">Question 2</div>
+      <div class="question">Where do you create the most impact?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('step-biz-2', 2)">
+          <span>Inside a company — improving how teams work, driving decisions, making processes more efficient</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-mkt', 2)">
+          <span>In the market — reaching audiences, growing channels, optimising campaigns</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-0', 0)">← Back</button>
+  </div>
+
+  <!-- Biz Step 2 -->
+  <div class="step" id="step-biz-2">
+    <div class="question-card">
+      <div class="step-label">Question 3</div>
+      <div class="question">What kind of work energises you most?</div>
+      <div class="options">
+        <button class="option-btn" onclick="go('result-biz-a', 3)">
+          <span>Analysing performance data, translating numbers into decisions, working with stakeholders</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="option-btn" onclick="go('result-biz-b', 3)">
+          <span>Coordinating projects, automating workflows, making things run smoothly across teams</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="go('step-biz-1', 1)">← Back</button>
+  </div>
+
+  <!-- RESULTS: Technical branch -->
+
+  <!-- Result A: The Clarity Maker -->
+  <div class="step" id="result-a">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Clarity Maker</div>
+      <div class="result-description">You turn complexity into clarity. You're energised by making data understandable and useful to people who need to act on it. You enjoy working across teams, communicating findings, and helping others make better decisions. The impact of your work is visible in how people change what they do based on what you give them.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Data Analyst, Product Analyst, Marketing Analyst, Revenue Analyst, Growth Analyst, BI Analyst, Reporting Analyst</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result B: The Deep Investigator -->
+  <div class="step" id="result-b">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Deep Investigator</div>
+      <div class="result-description">You're drawn to depth, experimentation, and discovery. You're comfortable sitting with uncertainty, forming hypotheses, and testing them. You don't just want to understand things — you want to push that understanding further. Results may take time, and that's fine.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Data Scientist, ML Engineer, NLP Engineer, Computer Vision Engineer, Applied AI Scientist, Applied Scientist, Research Engineer</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result C: The Systems Builder -->
+  <div class="step" id="result-c">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Systems Builder</div>
+      <div class="result-description">You're energised by building things that work reliably at scale. You care about architecture, performance, and foundations that others can build on. Your work is often invisible to the end user — but without it, nothing else functions. That suits you just fine.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Data Engineer, Backend Engineer, Platform Engineer, MLOps Engineer, Cloud Engineer, Junior Software Engineer, Python Developer</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result D: The Experience Builder -->
+  <div class="step" id="result-d">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Experience Builder</div>
+      <div class="result-description">You want to build things people actually use. You care about what the user sees, feels, and interacts with. You enjoy turning technical capability into accessible, well-designed experiences. The direct feedback loop between your work and the user energises you.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Frontend Engineer, Full-Stack Engineer, Product Engineer, Mobile Engineer, Junior Software Engineer</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result E: The Intelligence Integrator -->
+  <div class="step" id="result-e">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Intelligence Integrator</div>
+      <div class="result-description">You sit at the intersection of advanced technology and real-world products. You're drawn to making systems smarter — integrating AI, models, or intelligent features into things people actually use. You enjoy bridging cutting-edge capability with practical, production-ready solutions.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>AI Engineer, LLM Engineer, Generative AI Engineer, AI/ML Developer, Backend Engineer (AI focus), Applied AI Engineer, Software Engineer (AI Platform)</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result F: The Data Translator -->
+  <div class="step" id="result-f">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Data Translator</div>
+      <div class="result-description">You sit between raw data and the people who use it. You're energised by making data reliable, consistent, and usable — building the layer that turns messy inputs into something analysts and decision-makers can trust. You care deeply about data quality and structure.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Analytics Engineer, BI Developer, Data Engineer (analytics-focused), Data Modeller, dbt Developer, Reporting Engineer</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- RESULTS: Business branch -->
+
+  <!-- Result Biz A: The Business Analyst -->
+  <div class="step" id="result-biz-a">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Business Analyst</div>
+      <div class="result-description">You translate data and performance into decisions. You're comfortable working with numbers, identifying patterns, and communicating what they mean to people who need to act on them. You sit between the data and the business, making sure neither side loses the other.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Business Analyst, Operations Analyst, AI Project Coordinator, Digital Transformation Analyst, Product Analyst (business-facing)</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result Biz B: The Business Enabler -->
+  <div class="step" id="result-biz-b">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Business Enabler</div>
+      <div class="result-description">You make things run. You're energised by coordinating people, automating workflows, and removing friction from how teams operate. You use technology as a lever to get things done — not as something to build for its own sake. Your value is in judgment, organisation, and execution.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Project Manager, Product Owner, Operations Manager, Process Automation Specialist, AI Operations Specialist, Automation Analyst</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+  <!-- Result Mkt: The Market Builder -->
+  <div class="step" id="result-mkt">
+    <div class="result-card">
+      <div class="result-tag">Your orientation</div>
+      <div class="result-title">The Market Builder</div>
+      <div class="result-description">You're energised by reaching people — growing an audience, running campaigns, optimising channels, and measuring what works. You combine creative instinct with analytical thinking, and you use technology and data to make marketing more precise and more effective.</div>
+      <div class="result-roles">
+        <strong>Roles to look for</strong>
+        <p>Digital Marketing Manager, Performance Marketing Manager, Growth Marketing Manager, SEO Specialist, Paid Media Specialist, Content Strategist, Marketing Automation Specialist, CRM Manager</p>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restart()">↩ Start again</button>
+  </div>
+
+</div>
+
+<script>
+  const history = [];
+
+  const stepDepth = {
+    'step-0': 0,
+    'step-1': 1, 'step-biz-1': 1,
+    'step-2a': 2, 'step-2b': 2, 'step-biz-2': 2,
+    'step-3a': 3, 'step-3b': 3, 'step-3c': 3,
+    'result-a': 4, 'result-b': 4, 'result-c': 4, 'result-d': 4,
+    'result-e': 4, 'result-f': 4, 'result-biz-a': 4, 'result-biz-b': 4, 'result-mkt': 4
+  };
+
+  function go(id, depth) {
+    const current = document.querySelector('.step.active');
+    history.push(current.id);
+    current.classList.remove('active');
+    document.getElementById(id).classList.add('active');
+    updateProgress(id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function restart() {
+    history.length = 0;
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-0').classList.add('active');
+    updateProgress('step-0');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress(id) {
+    const isResult = id.startsWith('result');
+    document.getElementById('progress').style.display = isResult ? 'none' : 'flex';
+    const depth = stepDepth[id] ?? 0;
+    document.querySelectorAll('.progress-dot').forEach((d, i) => {
+      d.classList.remove('active', 'done');
+      if (i < depth) d.classList.add('done');
+      else if (i === depth) d.classList.add('active');
+    });
+  }
+</script>
+</body>
+</html>
