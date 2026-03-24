@@ -19,7 +19,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .step.active{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
-/* ── MODE PICKER ── */
 .picker-card{background:#fff;border-radius:16px;padding:48px 40px;box-shadow:0 2px 16px rgba(0,0,0,0.06);margin-bottom:24px;}
 .picker-card h1{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:12px;line-height:1.2;}
 .picker-card .lead{font-size:0.93rem;color:#555;line-height:1.75;margin-bottom:32px;font-weight:300;}
@@ -34,7 +33,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .tag-a{background:#f0faf9;color:#1a8e87;border:0.5px solid #1a8e87;}
 .tag-b{background:#fff0f4;color:#ca4365;border:0.5px solid #ca4365;}
 
-/* ── SHARED CARD STYLES ── */
 .section-header{text-align:center;margin-bottom:24px;}
 .section-tag{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:10px;}
 .section-title{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#1a1a1a;line-height:1.25;margin-bottom:10px;}
@@ -44,7 +42,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .instr-box p{font-size:0.82rem;color:#444;line-height:1.65;}
 .instr-box p+p{margin-top:6px;}
 .instr-box strong{font-weight:500;color:#1a1a1a;}
-
 .instr-box.mode-b{border-left-color:#ca4365;}
 
 .skills-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
@@ -77,7 +74,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .ev-area:focus{outline:none;border-color:#1a8e87;background:#fff;}
 .ev-area::placeholder{color:#c0c2c8;font-style:italic;}
 
-/* GAP PRIORITY (Mode B only) */
 .gap-priority{background:#fff8f9;border:0.5px solid #f5c0cc;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;}
 .gp-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:#ca4365;margin-bottom:2px;}
 .gp-row{display:flex;align-items:flex-start;gap:10px;}
@@ -87,7 +83,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .gp-btn:hover{border-color:#ca4365;background:#fff0f4;}
 .gp-btn.gp-on{background:#ca4365;border-color:#ca4365;color:#fff;font-weight:500;}
 
-/* ADD AREA */
 .add-area{background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:20px;border:1.5px dashed #d4cfc6;}
 .add-label{font-size:0.72rem;font-weight:500;color:#aaa;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:9px;}
 .add-row{display:flex;gap:7px;margin-bottom:6px;flex-wrap:wrap;}
@@ -99,34 +94,30 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .add-sub{width:100%;border:0.5px solid #ddd;border-radius:8px;padding:7px 11px;font-family:'DM Sans',sans-serif;font-size:0.78rem;background:#fafafa;color:#1a1a1a;}
 .add-sub:focus{outline:none;border-color:#1a8e87;}
 
-/* NAV */
 .nav-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
 .back-btn{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.83rem;color:#aaa;cursor:pointer;padding:8px 0;display:flex;align-items:center;gap:5px;transition:color 0.2s;}
 .back-btn:hover{color:#555;}
 .next-btn{background:#1a1a1a;color:#fff;border:none;border-radius:100px;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:0.88rem;cursor:pointer;transition:background 0.2s;}
 .next-btn:hover{background:#333;}
 
-/* ── RESULTS ── */
 .result-card{background:#1a1a1a;border-radius:16px;padding:48px 40px;color:#fff;box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:16px;}
 .r-tag{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 13px;border-radius:100px;margin-bottom:18px;}
 .r-tag-a{background:#1a8e87;color:#fff;}
 .r-tag-b{background:#ca4365;color:#fff;}
 .r-title{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:10px;line-height:1.2;}
 .r-desc{font-size:0.85rem;line-height:1.7;color:#888;margin-bottom:24px;}
-
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:28px;}
 .stat-box{background:rgba(255,255,255,0.06);border-radius:10px;padding:14px 10px;text-align:center;}
 .stat-n{font-size:1.6rem;font-weight:500;display:block;line-height:1;}
 .stat-l{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.06em;color:#666;margin-top:5px;}
-.c-conf{color:#4ecfbb;} .c-dev{color:#f0a86a;} .c-gap{color:#e06080;}
+.c-conf{color:#4ecfbb;}.c-dev{color:#f0a86a;}.c-gap{color:#e06080;}
 
 .r-section{margin-bottom:22px;}
 .r-sec-head{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:10px;padding-bottom:7px;border-bottom:0.5px solid rgba(255,255,255,0.07);}
-
 .r-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.05);}
 .r-item:last-child{border-bottom:none;}
 .r-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
-.d-conf{background:#1a8e87;} .d-dev{background:#d79053;} .d-gap{background:#ca4365;}
+.d-conf{background:#1a8e87;}.d-dev{background:#d79053;}.d-gap{background:#ca4365;}
 .r-body{flex:1;}
 .r-name{font-size:0.85rem;color:#ddd;line-height:1.4;}
 .r-ev{font-size:0.74rem;color:#666;margin-top:3px;line-height:1.4;}
@@ -147,7 +138,6 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 .restart-btn:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.35);}
 .unassessed-note{font-size:0.77rem;color:#555;padding:12px 14px;background:rgba(255,255,255,0.04);border-radius:8px;line-height:1.55;margin-top:4px;}
 
-/* action legend */
 .action-legend{margin-top:20px;padding:14px 16px;background:rgba(255,255,255,0.04);border-radius:8px;}
 .legend-head{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin-bottom:10px;}
 .legend-items{display:flex;flex-direction:column;gap:6px;}
@@ -325,11 +315,9 @@ body{font-family:'DM Sans',sans-serif;background:#f5f3ee;min-height:100vh;paddin
 </div>
 
 <script>
-// ── STATE ─────────────────────────────────────────────────────────
-let MODE = 'A';
-const ST = {tech:[],trans:[],soft:[]};
-
-const DEFS = {
+let MODE='A';
+const ST={tech:[],trans:[],soft:[]};
+const DEFS={
   tech:[
     {name:'Python',desc:'AE: scripting, automation, AI applications — AIB: automating workflows, working with APIs',imp:'core',eg:true},
     {name:'LangChain / LLM frameworks',desc:'AE: building LLM-powered applications, RAG pipelines, agents — appears in most AE postings',imp:'core',eg:true},
@@ -341,7 +329,7 @@ const DEFS = {
   trans:[
     {name:'Process or workflow analysis',desc:'AIB especially: mapping how work currently happens before automating it',imp:'core',eg:true},
     {name:'Explaining technical concepts to non-technical people',desc:'AE and AIB: translating what an AI system does into plain language for stakeholders',imp:'core',eg:true},
-    {name:'Domain or industry knowledge',desc:'Any sector expertise from previous work — can be a strong differentiator if it matches the company\'s industry',imp:'nice',eg:true},
+    {name:'Domain or industry knowledge',desc:"Any sector expertise from previous work — can be a strong differentiator if it matches the company's industry",imp:'nice',eg:true},
   ],
   soft:[
     {name:'Working with ambiguity',desc:'AI roles often involve unclear briefs, changing requirements, and incomplete information',imp:'core',eg:true},
@@ -350,233 +338,166 @@ const DEFS = {
   ]
 };
 
-function blank(s){ return {...s, status:null, evidence:'', freq:null, closable:null}; }
+function blank(s){return{...s,status:null,evidence:'',freq:null,closable:null};}
 
-function startMode(m) {
-  MODE = m;
-  // reset state
-  ST.tech=[]; ST.trans=[]; ST.soft=[];
-  // update instruction tones for mode B
-  document.querySelectorAll('.instr-box').forEach(el => {
-    el.classList.toggle('mode-b', m === 'B');
-  });
-  // update section tags
-  const prefix = m === 'B' ? 'Gap analysis · ' : 'Inventory · ';
-  document.getElementById('tag-tech').textContent = prefix + 'Technical skills';
-  document.getElementById('tag-trans').textContent = prefix + 'Transferable skills';
-  document.getElementById('tag-soft').textContent = prefix + 'Soft skills';
-  // add mode B instruction to tech screen
-  const instrTech = document.getElementById('instr-tech');
-  const existingBNote = instrTech.querySelector('.b-note');
-  if (m === 'B' && !existingBNote) {
-    const note = document.createElement('p');
-    note.className = 'b-note';
-    note.style.marginTop = '6px';
-    note.innerHTML = '<strong>Gap analysis mode:</strong> when you mark a skill as Gap, two extra questions appear below it — how often it appeared in your research, and whether you can close it during the programme. Your answers determine the suggested action in your results.';
+function startMode(m){
+  MODE=m;
+  ST.tech=[];ST.trans=[];ST.soft=[];
+  document.querySelectorAll('.instr-box').forEach(el=>{el.classList.toggle('mode-b',m==='B');});
+  const prefix=m==='B'?'Gap analysis · ':'Inventory · ';
+  document.getElementById('tag-tech').textContent=prefix+'Technical skills';
+  document.getElementById('tag-trans').textContent=prefix+'Transferable skills';
+  document.getElementById('tag-soft').textContent=prefix+'Soft skills';
+  const instrTech=document.getElementById('instr-tech');
+  const existingBNote=instrTech.querySelector('.b-note');
+  if(m==='B'&&!existingBNote){
+    const note=document.createElement('p');
+    note.className='b-note';note.style.marginTop='6px';
+    note.innerHTML='<strong>Gap analysis mode:</strong> when you mark a skill as Gap, two extra questions appear below it — how often it appeared in your research, and whether you can close it during the programme. Your answers determine the suggested action in your results.';
     instrTech.appendChild(note);
-  } else if (m === 'A' && existingBNote) {
-    existingBNote.remove();
-  }
-  go('s-tech', 1);
+  }else if(m==='A'&&existingBNote){existingBNote.remove();}
+  go('s-tech',1);
 }
 
-// ── RENDER ────────────────────────────────────────────────────────
-function initSec(sec) {
-  if (!ST[sec].length) ST[sec] = DEFS[sec].map(blank);
-  render(sec);
+function initSec(sec){if(!ST[sec].length)ST[sec]=DEFS[sec].map(blank);render(sec);}
+
+function render(sec){
+  const c=document.getElementById('l-'+sec);c.innerHTML='';
+  ST[sec].forEach((sk,i)=>{const d=document.createElement('div');d.className='skill-card'+(sk.status?' s-'+sk.status:'');d.innerHTML=cardHTML(sk,sec,i);c.appendChild(d);});
 }
 
-function render(sec) {
-  const c = document.getElementById('l-' + sec);
-  c.innerHTML = '';
-  ST[sec].forEach((sk, i) => {
-    const d = document.createElement('div');
-    d.className = 'skill-card' + (sk.status ? ' s-' + sk.status : '');
-    d.innerHTML = cardHTML(sk, sec, i);
-    c.appendChild(d);
-  });
-}
-
-function cardHTML(sk, sec, i) {
-  const detOpen = sk.status ? ' open' : '';
-  const showGP = MODE === 'B' && sk.status === 'gap';
-  return (
-    '<div class="skill-top">' +
-      '<div class="skill-name-wrap">' +
-        '<div class="skill-name">' + x(sk.name) + (sk.eg ? ' <span style="color:#d79053;font-weight:400">*</span>' : '') + '</div>' +
-        (sk.desc ? '<div class="skill-desc">' + x(sk.desc) + '</div>' : '') +
-      '</div>' +
-      '<span class="badge ' + (sk.imp==='core'?'b-core':'b-nice') + '">' + (sk.imp==='core'?'core':'nice-to-have') + '</span>' +
-      '<button class="del-btn" onclick="del(\'' + sec + '\',' + i + ')">✕</button>' +
-    '</div>' +
-    '<div class="status-btns">' +
-      sBtn(sk,'confident','✓ Confident',sec,i) +
-      sBtn(sk,'developing','~ Developing',sec,i) +
-      sBtn(sk,'gap','✗ Gap',sec,i) +
-    '</div>' +
-    '<div class="skill-detail' + detOpen + '">' +
-      '<textarea class="ev-area" placeholder="Evidence: which project, role, or context shows this? One specific sentence is enough." onchange="save(\'' + sec + '\',' + i + ',\'evidence\',this.value)">' + x(sk.evidence||'') + '</textarea>' +
-      (MODE === 'B' ?
-        '<div class="gap-priority" id="gp-' + sec + '-' + i + '" style="' + (showGP?'':'display:none') + '">' +
-          '<div class="gp-label">Gap priority questions</div>' +
-          '<div class="gp-row">' +
-            '<div class="gp-q">How often did this skill appear in your job posting research?</div>' +
-            '<div class="gp-opts">' +
-              gBtn(sk,'freq','most','Most postings',sec,i) +
-              gBtn(sk,'freq','some','Some postings',sec,i) +
-              gBtn(sk,'freq','few','A few postings',sec,i) +
-            '</div>' +
-          '</div>' +
-          '<div class="gp-row">' +
-            '<div class="gp-q">How long would it realistically take you to close this gap?</div>' +
-            '<div class="gp-opts">' +
-              gBtn(sk,'closable','yes','A few weeks',sec,i) +
-              gBtn(sk,'closable','maybe','A few months',sec,i) +
-              gBtn(sk,'closable','no','Longer than that',sec,i) +
-            '</div>' +
-          '</div>' +
+function cardHTML(sk,sec,i){
+  const detOpen=sk.status?' open':'';
+  const showGP=MODE==='B'&&sk.status==='gap';
+  return(
+    '<div class="skill-top">'+
+      '<div class="skill-name-wrap">'+
+        '<div class="skill-name">'+x(sk.name)+(sk.eg?' <span style="color:#d79053;font-weight:400">*</span>':'')+'</div>'+
+        (sk.desc?'<div class="skill-desc">'+x(sk.desc)+'</div>':'')+
+      '</div>'+
+      '<span class="badge '+(sk.imp==='core'?'b-core':'b-nice')+'">'+(sk.imp==='core'?'core':'nice-to-have')+'</span>'+
+      '<button class="del-btn" onclick="del(\''+sec+'\','+i+')">✕</button>'+
+    '</div>'+
+    '<div class="status-btns">'+sBtn(sk,'confident','✓ Confident',sec,i)+sBtn(sk,'developing','~ Developing',sec,i)+sBtn(sk,'gap','✗ Gap',sec,i)+'</div>'+
+    '<div class="skill-detail'+detOpen+'">'+
+      '<textarea class="ev-area" placeholder="Evidence: which project, role, or context shows this? One specific sentence is enough." onchange="save(\''+sec+'\','+i+',\'evidence\',this.value)">'+x(sk.evidence||'')+'</textarea>'+
+      (MODE==='B'?
+        '<div class="gap-priority" id="gp-'+sec+'-'+i+'" style="'+(showGP?'':'display:none')+'">'+
+          '<div class="gp-label">Gap priority questions</div>'+
+          '<div class="gp-row"><div class="gp-q">How often did this skill appear in your job posting research?</div>'+
+          '<div class="gp-opts">'+gBtn(sk,'freq','most','Most postings',sec,i)+gBtn(sk,'freq','some','Some postings',sec,i)+gBtn(sk,'freq','few','A few postings',sec,i)+'</div></div>'+
+          '<div class="gp-row"><div class="gp-q">How long would it realistically take you to close this gap?</div>'+
+          '<div class="gp-opts">'+gBtn(sk,'closable','yes','A few weeks',sec,i)+gBtn(sk,'closable','maybe','A few months',sec,i)+gBtn(sk,'closable','no','Longer than that',sec,i)+'</div></div>'+
         '</div>'
-      : '') +
+      :'')+
     '</div>'
   );
 }
 
-function sBtn(sk, val, lbl, sec, i) {
-  return '<button class="sk-btn' + (sk.status===val?' on-'+val:'') + '" onclick="setStatus(\'' + sec + '\',' + i + ',\'' + val + '\',this)">' + lbl + '</button>';
-}
-function gBtn(sk, field, val, lbl, sec, i) {
-  return '<button class="gp-btn' + (sk[field]===val?' gp-on':'') + '" onclick="setGP(\'' + sec + '\',' + i + ',\'' + field + '\',\'' + val + '\',this)">' + lbl + '</button>';
-}
+function sBtn(sk,val,lbl,sec,i){return'<button class="sk-btn'+(sk.status===val?' on-'+val:'')+'" onclick="setStatus(\''+sec+'\','+i+',\''+val+'\',this)">'+lbl+'</button>';}
+function gBtn(sk,field,val,lbl,sec,i){return'<button class="gp-btn'+(sk[field]===val?' gp-on':'')+'" onclick="setGP(\''+sec+'\','+i+',\''+field+'\',\''+val+'\',this)">'+lbl+'</button>';}
 
-// ── INTERACTIONS ──────────────────────────────────────────────────
-function setStatus(sec, i, val, btn) {
-  ST[sec][i].status = val;
-  if (val !== 'gap') { ST[sec][i].freq=null; ST[sec][i].closable=null; }
-  const card = btn.closest('.skill-card');
-  card.className = 'skill-card s-' + val;
-  card.querySelectorAll('.sk-btn').forEach(b => b.classList.remove('on-confident','on-developing','on-gap'));
-  btn.classList.add('on-' + val);
+function setStatus(sec,i,val,btn){
+  ST[sec][i].status=val;
+  if(val!=='gap'){ST[sec][i].freq=null;ST[sec][i].closable=null;}
+  const card=btn.closest('.skill-card');
+  card.className='skill-card s-'+val;
+  card.querySelectorAll('.sk-btn').forEach(b=>b.classList.remove('on-confident','on-developing','on-gap'));
+  btn.classList.add('on-'+val);
   card.querySelector('.skill-detail').classList.add('open');
-  if (MODE === 'B') {
-    const gp = document.getElementById('gp-' + sec + '-' + i);
-    if (gp) gp.style.display = val==='gap' ? 'flex' : 'none';
-  }
+  if(MODE==='B'){const gp=document.getElementById('gp-'+sec+'-'+i);if(gp)gp.style.display=val==='gap'?'flex':'none';}
 }
-function setGP(sec, i, field, val, btn) {
-  ST[sec][i][field] = val;
-  btn.closest('.gp-opts').querySelectorAll('.gp-btn').forEach(b => b.classList.remove('gp-on'));
-  btn.classList.add('gp-on');
-}
-function save(sec, i, field, val) { ST[sec][i][field]=val; }
-function del(sec, i) { ST[sec].splice(i,1); render(sec); }
-function addSkill(sec) {
-  const nEl=document.getElementById('n-'+sec+'-name'), sEl=document.getElementById('n-'+sec+'-sub'), iEl=document.getElementById('n-'+sec+'-imp');
-  const name=nEl.value.trim(); if(!name) return;
+function setGP(sec,i,field,val,btn){ST[sec][i][field]=val;btn.closest('.gp-opts').querySelectorAll('.gp-btn').forEach(b=>b.classList.remove('gp-on'));btn.classList.add('gp-on');}
+function save(sec,i,field,val){ST[sec][i][field]=val;}
+function del(sec,i){ST[sec].splice(i,1);render(sec);}
+function addSkill(sec){
+  const nEl=document.getElementById('n-'+sec+'-name'),sEl=document.getElementById('n-'+sec+'-sub'),iEl=document.getElementById('n-'+sec+'-imp');
+  const name=nEl.value.trim();if(!name)return;
   ST[sec].push({name,desc:sEl.value.trim(),imp:iEl.value,eg:false,status:null,evidence:'',freq:null,closable:null});
-  render(sec); nEl.value=''; sEl.value='';
+  render(sec);nEl.value='';sEl.value='';
 }
 
-// ── NAVIGATION ────────────────────────────────────────────────────
-function go(id, depth) {
+function go(id,depth){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const isRes = id==='s-results', isPick = id==='s-pick';
-  document.getElementById('prog').style.display = (isRes||isPick) ? 'none' : 'flex';
-  if (!isRes && !isPick) {
-    document.querySelectorAll('.pd').forEach((d,i)=>{
-      d.classList.remove('active','done');
-      if(i<depth) d.classList.add('done'); else if(i===depth) d.classList.add('active');
-    });
-  }
-  if (id==='s-tech') initSec('tech');
-  if (id==='s-trans') initSec('trans');
-  if (id==='s-soft') initSec('soft');
+  const isRes=id==='s-results',isPick=id==='s-pick';
+  document.getElementById('prog').style.display=(isRes||isPick)?'none':'flex';
+  if(!isRes&&!isPick){document.querySelectorAll('.pd').forEach((d,i)=>{d.classList.remove('active','done');if(i<depth)d.classList.add('done');else if(i===depth)d.classList.add('active');});}
+  if(id==='s-tech')initSec('tech');
+  if(id==='s-trans')initSec('trans');
+  if(id==='s-soft')initSec('soft');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── ACTION LOGIC (Mode B) ─────────────────────────────────────────
-function gapAction(sk) {
-  const {freq, closable, imp} = sk;
-  if (!freq || !closable) return null;
-  if (imp==='core' && freq==='most' && closable==='no') return 'reconsider';
-  if ((freq==='most'||freq==='some') && (closable==='yes'||closable==='maybe')) return 'close';
-  if (imp==='core' && (freq==='some'||freq==='few') && closable==='no') return 'story';
-  if (imp==='nice' || freq==='few') return 'apply';
-  return 'apply';
+function gapAction(sk){
+  const{freq,closable,imp}=sk;
+  if(!freq||!closable)return null;
+  if(imp==='core'&&freq==='most'&&closable==='no')return'reconsider';
+  if((freq==='most'||freq==='some')&&(closable==='yes'||closable==='maybe'))return'close';
+  if(imp==='core'&&(freq==='some'||freq==='few')&&closable==='no')return'story';
+  if(imp==='nice'||freq==='few')return'apply';
+  return'apply';
 }
 
-const ACTION_ORDER = {reconsider:0, close:1, story:2, apply:3, null:4};
-const ACTION_META = {
-  close:     {label:'Close it now',     cls:'rt-close'},
-  apply:     {label:'Apply anyway',     cls:'rt-apply'},
+const ACTION_ORDER={reconsider:0,close:1,story:2,apply:3,null:4};
+const ACTION_META={
+  close:{label:'Close it now',cls:'rt-close'},
+  apply:{label:'Apply anyway',cls:'rt-apply'},
   reconsider:{label:'Revisit targeting',cls:'rt-reconsider'},
-  story:     {label:'Use as your story',cls:'rt-story'},
+  story:{label:'Use as your story',cls:'rt-story'},
 };
 
-// ── RESULTS ───────────────────────────────────────────────────────
-function showResults() {
-  let nConf=0, nDev=0, nGap=0, nU=0;
-  const conf=[], dev=[], gaps=[];
+function showResults(){
+  let nConf=0,nDev=0,nGap=0,nU=0;
+  const conf=[],dev=[],gaps=[];
   ['tech','trans','soft'].forEach(sec=>{
     ST[sec].forEach(sk=>{
-      if (!sk.status){nU++;return;}
-      const o={...sk, action: MODE==='B'&&sk.status==='gap' ? gapAction(sk) : null};
+      if(!sk.status){nU++;return;}
+      const o={...sk,action:MODE==='B'&&sk.status==='gap'?gapAction(sk):null};
       if(sk.status==='confident'){nConf++;conf.push(o);}
       else if(sk.status==='developing'){nDev++;dev.push(o);}
       else{nGap++;gaps.push(o);}
     });
   });
-  if (MODE==='B') gaps.sort((a,b)=>{
-    const ao=ACTION_ORDER[a.action]??4, bo=ACTION_ORDER[b.action]??4;
-    if(ao!==bo) return ao-bo;
-    return (a.imp==='core'?0:1)-(b.imp==='core'?0:1);
+  if(MODE==='B')gaps.sort((a,b)=>{
+    const ao=ACTION_ORDER[a.action]??4,bo=ACTION_ORDER[b.action]??4;
+    if(ao!==bo)return ao-bo;
+    return(a.imp==='core'?0:1)-(b.imp==='core'?0:1);
   });
-
   document.getElementById('cnt-conf').textContent=nConf;
   document.getElementById('cnt-dev').textContent=nDev;
   document.getElementById('cnt-gap').textContent=nGap;
-
-  // mode-specific labels
-  const isB = MODE==='B';
-  document.getElementById('r-mode-tag').className = 'r-tag ' + (isB?'r-tag-b':'r-tag-a');
-  document.getElementById('r-mode-tag').textContent = isB ? 'Gap analysis' : 'Skills inventory';
-  document.getElementById('r-title').textContent = isB ? 'Gap analysis' : 'Inventory summary';
-  document.getElementById('r-desc').textContent = isB
-    ? 'Your gaps are sorted by suggested action, then by core vs nice-to-have. Each action is based on how often the skill appeared in your research and whether you can close it during the programme.'
-    : 'A structured view of what you have and where the gaps are. Use this when writing your CV, preparing for interviews, and deciding which applications are worth your time.';
-  document.getElementById('gap-sec-head').textContent = isB
-    ? 'Gaps — prioritised with suggested actions'
-    : 'Gaps — skills to address before or during your search';
-  document.getElementById('action-legend').style.display = isB ? 'block' : 'none';
-
-  renderList('conf', conf, false);
-  renderList('dev', dev, false);
-  renderList('gap', gaps, isB);
-
+  const isB=MODE==='B';
+  document.getElementById('r-mode-tag').className='r-tag '+(isB?'r-tag-b':'r-tag-a');
+  document.getElementById('r-mode-tag').textContent=isB?'Gap analysis':'Skills inventory';
+  document.getElementById('r-title').textContent=isB?'Gap analysis':'Inventory summary';
+  document.getElementById('r-desc').textContent=isB
+    ?'Your gaps are sorted by suggested action, then by core vs nice-to-have. Each action is based on how often the skill appeared in your research and whether you can close it during the programme.'
+    :'A structured view of what you have and where the gaps are. Use this when writing your CV, preparing for interviews, and deciding which applications are worth your time.';
+  document.getElementById('gap-sec-head').textContent=isB?'Gaps — prioritised with suggested actions':'Gaps — skills to address before or during your search';
+  document.getElementById('action-legend').style.display=isB?'block':'none';
+  renderList('conf',conf,false);
+  renderList('dev',dev,false);
+  renderList('gap',gaps,isB);
   const uEl=document.getElementById('note-unassessed');
   uEl.style.display=nU>0?'block':'none';
-  if(nU>0) uEl.textContent=nU+' skill'+(nU>1?'s were':' was')+' not assessed. Go back and mark '+(nU>1?'them':'it')+' if you want a complete picture.';
-
+  if(nU>0)uEl.textContent=nU+' skill'+(nU>1?'s were':' was')+' not assessed. Go back and mark '+(nU>1?'them':'it')+' if you want a complete picture.';
   go('s-results',5);
 }
 
-function renderList(type, items, showAction) {
-  const sec=document.getElementById('sec-'+type), list=document.getElementById('list-'+type);
+function renderList(type,items,showAction){
+  const sec=document.getElementById('sec-'+type),list=document.getElementById('list-'+type);
   if(!items.length){sec.style.display='none';return;}
   sec.style.display='block';
   const dotCls=type==='conf'?'d-conf':type==='dev'?'d-dev':'d-gap';
   list.innerHTML=items.map(sk=>{
     let tags='<span class="rtag '+(sk.imp==='core'?'rt-core':'rt-nice')+'">'+(sk.imp==='core'?'core':'nice-to-have')+'</span>';
-    if(showAction){
-      const m=sk.action ? ACTION_META[sk.action] : {label:'Not prioritised',cls:'rt-unprioritised'};
-      tags+='<span class="rtag '+m.cls+'">'+m.label+'</span>';
-    }
-    return '<div class="r-item"><div class="r-dot '+dotCls+'"></div><div class="r-body"><div class="r-name">'+x(sk.name)+'</div>'+(sk.evidence?'<div class="r-ev">'+x(sk.evidence)+'</div>':'')+'</div><div class="r-tags">'+tags+'</div></div>';
+    if(showAction){const m=sk.action?ACTION_META[sk.action]:{label:'Not prioritised',cls:'rt-unprioritised'};tags+='<span class="rtag '+m.cls+'">'+m.label+'</span>';}
+    return'<div class="r-item"><div class="r-dot '+dotCls+'"></div><div class="r-body"><div class="r-name">'+x(sk.name)+'</div>'+(sk.evidence?'<div class="r-ev">'+x(sk.evidence)+'</div>':'')+'</div><div class="r-tags">'+tags+'</div></div>';
   }).join('');
 }
 
-// ── EXPORT ────────────────────────────────────────────────────────
-function exportMap() {
+function exportMap(){
   const AMAP={close:'Close it now',apply:'Apply anyway',reconsider:'Revisit targeting',story:'Use as your story'};
   const FMAP={most:'Most postings',some:'Some postings',few:'A few postings'};
   const CMAP={yes:'Yes',maybe:'Maybe',no:'Needs outside work'};
@@ -596,7 +517,7 @@ function exportMap() {
   });
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([out],{type:'text/plain'}));
-  a.download='my-skills-map.txt'; a.click();
+  a.download='my-skills-map.txt';a.click();
 }
 
 function x(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
